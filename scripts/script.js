@@ -1,39 +1,3 @@
- // function afficherResultat(score, nbMotsProposes) {
-//   console.log("Votre score est de " + score + " sur " + nbMotsProposes);
-// }
-
-// function choisirPhraseOuMots() {
-//   let choix = prompt(
-//     'Voulez-vous jouer avec les mots (entrer "mots") ou les phrases (entrer "phrases")?'
-//   );
-//   while (choix !== "mots" && choix !== "phrases") {
-//     choix = prompt("Veuillez choisir la liste : mots ou phrases");
-//   }
-//   return choix;
-// }
-
-// function lancerBoucleDeJeu(listePropositions) {
-//   let score = 0;
-
-//   for (let i = 0; i < listePropositions.length; i++) {
-//     let motUtilisateur = prompt("Recopiez : " + listePropositions[i]);
-//     if (motUtilisateur === listePropositions[i]) {
-//       score++;
-//     }
-//   }
-
-//   return score;
-// }
-
-// function lancerJeu() {
-//   let choix = choisirPhraseOuMots();
-
-//   let listeChoisie = choix === "mots" ? listeMots : listePhrases;
-//   let score = lancerBoucleDeJeu(listeChoisie);
-//   let nbMotsProposes = listeChoisie.length;
-
-//   afficherResultat(score, nbMotsProposes);
-// }
 
 
 
