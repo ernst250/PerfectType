@@ -1,4 +1,4 @@
-// function afficherResultat(score, nbMotsProposes) {
+ // function afficherResultat(score, nbMotsProposes) {
 //   console.log("Votre score est de " + score + " sur " + nbMotsProposes);
 // }
 
@@ -75,7 +75,23 @@ function afficherEmail(nom, email, score) {
     let mailto = `mailto:${email}?subject=Partage du score PerfectType&body=Salut, je suis ${nom} et je viens de réaliser le score ${score} sur le site de PerfectType  !`
     location.href = mailto
 }
-
+// Cette fonction valide le nom de l'utilisateur.
+function validerNom(nom){
+  if(nom.length >=2){
+    return true
+  }
+  return false
+}
+// cette finction valide l'email de l'utilisateur
+// Elle utilise une expression régulière pour vérifier le format de l'email.
+// Si l'email est valide, elle retourne true, sinon false.
+function validerEmail(email){
+  let emailRegex = new RegExp("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+  if(emailRegex.test(email)){
+    return true
+  }
+  return false
+}
 /**
  * Cette fonction lance le jeu. 
  * Elle demande à l'utilisateur de choisir entre "mots" et "phrases" et lance la boucle de jeu correspondante
@@ -116,6 +132,7 @@ for(let index = 0; index < listeBtnRadio.length; index++){
     afficherProposition(listProposition[i])
   })
 }
+// Gestion de l'evenement de soumission du formulaire de partage du score
 let form = document.querySelector("form")
 form.addEventListener("submit",(event)=>{
   event.preventDefault()
@@ -125,8 +142,13 @@ form.addEventListener("submit",(event)=>{
 
   let baliseEmail = document.getElementById("email")
   let email = baliseEmail.value
+  // Validation du nom et de l'email
+  if (validerNom(nom) && validerEmail(email)) {
   let scoreEmail = `${score} / ${i}`
   afficherEmail(nom, email,scoreEmail)
+}else{
+  console.log("Erreur")
+}
 })
     
     afficherResultat(score, i)
