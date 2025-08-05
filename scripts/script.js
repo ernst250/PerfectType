@@ -1,8 +1,3 @@
-
-
-
-
-
 /*********************************************************************************
  * 
  * Ce fichier contient toutes les fonctions nécessaires au fonctionnement du jeu. 
@@ -37,6 +32,7 @@ function afficherProposition(proposition){
  */
 function afficherEmail(nom, email, score) {
     let mailto = `mailto:${email}?subject=Partage du score PerfectType&body=Salut, je suis ${nom} et je viens de réaliser le score ${score} sur le site de PerfectType  !`
+    console.log("Lien mailto:", mailto)
     location.href = mailto
 }
 // Cette fonction valide le nom de l'utilisateur.
